@@ -18,8 +18,13 @@
         "name": "next"
       }
     ],
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@types/firebase": ["./node_modules/@types/firebase"],
+      "@firebase/*": ["./node_modules/@firebase/*"]
+
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
