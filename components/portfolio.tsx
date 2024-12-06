@@ -28,15 +28,7 @@ type Descriptions = {
 
 const Portfolio = () => {
 
-  const [imageUrl, setImageUrl] = useState('');
-  useEffect(() => {
-    getDoc(toyRef).then((doc) => {
-      if (doc.exists()) {
-        const imageData = doc.data().image;
-        setImageUrl(imageData);
-      }
-    });
-  }, []);
+  
 
   // Separate expansion states for each section
   const [expandedSections, setExpandedSections] = useState({
