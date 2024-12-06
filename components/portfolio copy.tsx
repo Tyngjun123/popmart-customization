@@ -5,15 +5,6 @@ import { ChevronDown, ChevronUp, Download } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Button } from '@/components/ui/button';
-import firebaseConfig from './firebase';
-import { initializeApp } from '@firebase/app';
-import { getFirestore, doc, getDoc } from '@firebase/firestore';
-
-const firebaseApp = initializeApp(firebaseConfig);
-const db = getFirestore(firebaseApp);
-
-const toyRef = doc(db, 'Toy', 'VtbYiSMqNZe5b4nnA5Fg');
-
 
 // Define types for countries and MBTI types
 type Country = 'Malaysia' | 'Singapore' | 'Japan' | 'China';
@@ -27,16 +18,6 @@ type Descriptions = {
 };
 
 const Portfolio = () => {
-
-  const [imageUrl, setImageUrl] = useState('');
-  useEffect(() => {
-    getDoc(toyRef).then((doc) => {
-      if (doc.exists()) {
-        const imageData = doc.data().image;
-        setImageUrl(imageData);
-      }
-    });
-  }, []);
 
   // Separate expansion states for each section
   const [expandedSections, setExpandedSections] = useState({
@@ -209,12 +190,6 @@ const Portfolio = () => {
                 <div className="w-12 h-12 border-4 border-blue-200 border-t-blue-500 rounded-full animate-spin" />
               </div>
 
-             {/* <img src="{imageData}" alt="Pop Mart Customizer" className="w-64 h-64" /> */ }
-              <img 
-                src={imageUrl} 
-                alt="Pop Mart Customizer" 
-                className="w-64 h-64" 
-              />
               <img 
                 src={imageError ? DEFAULT_IMAGE : currentImageSrc || getCharacterImage(country, mbtiType)}
                 alt={`${country} ${mbtiType} Character`}

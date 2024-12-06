@@ -40,6 +40,7 @@ const HomeCustomize: React.FC = () => {
       {/* 2nd row */}
       <div className="flex justify-center">
         <img src="https://i.imgur.com/pGwuWbn.jpeg" alt="Pop Mart Customizer" className="w-64 h-64" />
+        <img src="{imageData}" alt="Pop Mart Customizer" className="w-64 h-64" />
 
        {/*  
                <img src="/images/malaysia-intj.webp" alt="Pop Mart Customizer" className="w-64 h-64" />

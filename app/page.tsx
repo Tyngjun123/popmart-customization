@@ -1,6 +1,7 @@
 /** import HomeCustomize from '@/components/home'; **/
 import Portfolio from '@/components/portfolio';
 
+
 /**
  * The root route of the application.
  *
