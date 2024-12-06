@@ -211,11 +211,6 @@ const Portfolio = () => {
 
              {/* <img src="{imageData}" alt="Pop Mart Customizer" className="w-64 h-64" /> */ }
               <img 
-                src={imageUrl} 
-                alt="Pop Mart Customizer" 
-                className="w-64 h-64" 
-              />
-              <img 
                 src={imageError ? DEFAULT_IMAGE : currentImageSrc || getCharacterImage(country, mbtiType)}
                 alt={`${country} ${mbtiType} Character`}
                 className={`
